@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl of the indian ocean</title>
+    <link rel="stylesheet" href="mini.css">
+    <link rel="javascript" href="mini.js">
+    <script src="https://kit.fontawesome.com/7df7b35138.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!--header-->
+    <header>
+        <a href="https://en.wikipedia.org/wiki/Sri_Lanka" class="logo">SRI LANKA</a>
+        <ul>
+        <li><a href="mini.html">Home</a></li>
+        
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="todo.html">To do list</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        </ul>
+    </header>
+    <section class="banner">
+
+    </section>
+
+
+<div class="container">
+    <div class="todoBlock">
+        <!-- main title holder -->
+        <div class="titleHolder">
+            <h1>To Do List</h1>
+        </div>
+        <!-- todo list -->
+        <div class="todoList">
+            <!-- list holder -->
+            <div class="listHolder" id="listHolder">
+                <ul class="list" id="lists">
+                    <!-----------GetValue by Javascript-->
+                    <li>TRAVEL<div class="listIcon"><button>X</button></div>
+                    </li>
+                    <li>WORK<div class="listIcon"><button>X</button></div>
+                    </li>
+                    <li>MEETINGS<div class="listIcon"><button>X</button></div>
+                    </li>
+                    <li>STUDIES<div class="listIcon"><button>X</button></div>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- form holder -->
+            <div class="formHolder">
+                <div class="col big">
+                    <input type="text" id="addInput" required>
+                </div>
+                <div class="col">
+                    <button type="button" id="addBtn" class="btn-primary">Add Item</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var addbtn = document.getElementById("addBtn");
+        var removeBtn = document.getElementById("removeBtn");
+        var input = document.getElementById("addInput");
+        var list = document.getElementById("lists");
+        var dlt = document.getElementsByClassName('listIcon');
+
+        addbtn.addEventListener("click", addItem);
+        list.addEventListener("click", deleteItem);
+
+
+        function addItem() {
+            let data = input;
+            let listCeate = document.createElement("li");
+            let listText = document.createTextNode(data.value);
+            listCeate.appendChild(listText);
+            list.appendChild(listCeate);
+            //Close icon
+            let iconD = document.createElement("div");
+            iconD.classList.add("listIcon");
+            let closeIcon = document.createElement("Button");
+            closeIcon.classList.add("rBTN");
+            closeIcon.innerText = "X";
+            iconD.appendChild(closeIcon);
+            listCeate.appendChild(iconD);
+            //Clear Input 
+            data.value = "";
+        }
+        //Delete Items
+        function deleteItem(t) {
+            let item = t.target;
+            if (item.classList[0]) {
+                const list = item.parentElement;
+                //animation
+                list.classList.add('falling');
+                list.addEventListener('transitionend', function () {
+                    //remove item
+                    this.remove();
+                });
+            };
+        };
+
+
+        // Hide List
+        removeBtn.addEventListener('click', function () {
+            let rBox = document.getElementById('listHolder');
+            rBox.classList.toggle("rBox");
+        });
+</script>
+
+
+
+
+
+
+    <!--footer-->
+
+    <section class="footer" id="EPA">
+        <div class="social">
+            <a href="https://www.google.com/search?q=facebook.com+login&rlz=1C1BNSD_enLK962LK962&oq=facebook.com&aqs=chrome.3.5j69i57j0i512j0i433i512j0i512l4.6115j0j15&sourceid=chrome&ie=UTF-8"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.google.com/search?q=instagram.com+login&rlz=1C1BNSD_enLK962LK962&ei=edfeYeKhJZLb0ATX76mABA&oq=ins.com+login&gs_lcp=Cgdnd3Mtd2l6EAEYADIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeSgQIQRgASgQIRhgAUABYmARguhVoAHACeACAAeEBiAHSBJIBBTAuMS4ymAEAoAEBwAEB&sclient=gws-wiz"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.google.com/search?q=twitter.com+login&rlz=1C1BNSD_enLK962LK962&ei=q9feYaHkCbSUr7wPptCe2As&oq=twitter.com+login&gs_lcp=Cgdnd3Mtd2l6EAEYADIFCAAQxAIyBggAEAcQHjIFCAAQgAQyBQgAEIAEMgQIABAeMgQIABAeMgYIABAFEB4yBggAEAUQHjIGCAAQBRAeMgYIABAFEB46BwgAEEcQsAM6BAgAEA06CAgAEAcQChAeOggIABAHEAUQHkoECEEYAEoECEYYAFD_CljoQWC7UWgBcAJ4AIAB5AGIAeUZkgEGMC4xNC40mAEAoAEByAEIwAEB&sclient=gws-wiz"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.google.com/search?q=gmail.com+login&rlz=1C1BNSD_enLK962LK962&ei=zdfeYe76NbGvmAXYoYzIBg&oq=gmacom+login&gs_lcp=Cgdnd3Mtd2l6EAEYADIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeMgYIABAHEB4yBggAEAcQHjIGCAAQBxAeOgcIABBHELADOggIABAHEAUQHkoECEEYAEoECEYYAFClC1jAIWDdMWgBcAB4AYAB4wGIAdAMkgEFMC4zLjWYAQCgAQHIAQjAAQE&sclient=gws-wiz"><i class="fas fa-envelope-open"></i></a>
+        </div>
+    
+        <ul class="list">
+            <li><a href="mini.html">Home</a></li>
+            
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="todo.html">To do list</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+        </ul>
+    
+        <p class="copyright">
+            © 2022 Kavinda Shehan. All Rights Reserved. Privacy policy Web Design & Development by Kavinda shehan
+        </p>
+    
+    
+    </section>
+
+
+</body>
+
+</html>
